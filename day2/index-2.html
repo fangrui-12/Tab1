@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 
+    1. javascript object literal  vs  json
+
+    JSON.parse
+    JSON.stringify
+
+    2. ooap  vs functional programming
+
+    programming paradigm
+   -->
+  <body>
+    <script>
+      // 1. object literal
+      var obj = {
+        name: "james",
+        age: 18,
+        job: "student",
+        say: function () {
+          console.log("hello world!");
+        },
+      };
+      // 2. update
+      obj.age = 19;
+      obj["age"] = 20;
+      // 3. reference
+      const a = {},
+        b = {},
+        c = "hi",
+        d = "hi";
+
+      // console.log(a === b);
+      // console.log(c === d);
+
+      // console.log(obj);
+
+      // 4. prototype
+      Object.create = function (obj) {
+        var F = function () {};
+        F.prototype = obj;
+        return new F();
+      };
+
+      const foo = {
+        bar: "baz",
+      };
+
+      const newObj = Object.create(foo);
+
+      // console.log(newObj);
+
+      // for (name in newObj) {
+      //   console.log(name);
+      // }
+
+      // TODO why can not iterate Array
+      // for (const name of Object.getOwnPropertyNames(String)) {
+      //   console.log(name);
+      // }
+
+      // console.log("-----------------");
+
+      // for (const name of Object.getOwnPropertyNames(String.prototype)) {
+      //   console.log(name);
+      // }
+
+      // console.log("-----------------");
+
+      // const str = "";
+
+      // for (const name of Object.getOwnPropertyNames(Array)) {
+      //   console.log(name);
+      // }
+
+      // console.log("-----------------");
+
+      // for (const name of Object.getOwnPropertyNames(Array.prototype)) {
+      //   console.log(name);
+      // }
+
+      // 5. delete
+      delete obj.age;
+    </script>
+  </body>
+</html>

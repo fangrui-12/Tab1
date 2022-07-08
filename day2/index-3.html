@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1. function
+
+      // static properties of Function
+      for (const name of Object.getOwnPropertyNames(Function)) {
+        console.log(name);
+      }
+
+      console.log("-----------------");
+
+      //  properties of instance of Function
+      for (const name of Object.getOwnPropertyNames(Function.prototype)) {
+        console.log(name);
+      }
+
+      // 2. function literal
+      const add = function (a, b) {
+        return a + b;
+      };
+
+      // function add(a, b, c) {
+      //   return a + b + c;
+      // }
+
+      // console.log(add(1, 2, 3));
+
+      // 3. function invocation
+      //  4 种方式
+
+      // method invocation
+      const foo = {
+        baz: 1,
+        bar: function () {
+          console.log("this:", JSON.stringify(this));
+          console.log("hello world!");
+        },
+      };
+
+      foo.bar();
+      foo.bar.apply({ baz: "hi" });
+
+      // function invocation
+
+      function baz() {
+        console.log("hello world!");
+      }
+      baz();
+
+      // constructor invocation
+      var Quo = function (string) {
+        this.status = string;
+      };
+
+      Quo.prototype.get_status = function () {
+        return this.status;
+      };
+
+      var myQuo = new Quo("confused");
+
+      console.log(myQuo.get_status());
+
+      // apply invocation
+      const addition = function (a, b) {
+        return a + b;
+      };
+
+      const input = [1, 2];
+
+      console.log(addition.apply(null, input));
+
+      // console.log(this);
+
+      // 4. arguments
+      const bazz = function () {
+        // array like object
+        console.log("arguments:", JSON.stringify(arguments));
+        console.log(Array.isArray(arguments));
+      };
+
+      bazz(1, 2, 3, 4, 5);
+
+      // 5. return
+
+      // 6. exception
+      function fooo(args) {
+        try {
+          if (args.length < 2) {
+            throw new Error("too few arguments");
+          }
+        } catch (err) {
+        } finally {
+        }
+      }
+
+      // 7. 类型增强
+      Array.prototype.foo = function () {
+        return this.join("<-->");
+      };
+
+      console.log([1, 2, 3].foo());
+
+      // 8. 递归
+      // 遍历树 DOM API
+
+      // 9. scope
+      // 函数作用域
+      // 10. closure
+
+      function barr() {
+        const a = 10;
+
+        return {
+          a,
+        };
+      }
+
+      const b = barr();
+      console.log(b.a);
+
+      // 11. callback
+      // 餐馆点菜
+      /* 
+        a -> --------< a'
+        b --> ---< b'
+        c ---->
+      */
+
+      function heavilyComputation() {
+        let i = 0;
+        console.time("heavy");
+        while (i < 10e8) {
+          i++;
+        }
+        console.timeEnd("heavy");
+      }
+
+      // heavilyComputation();
+
+      // function foooo(callback) {
+      //   setTimeout(function () {
+      //     heavilyComputation();
+      //     callback();
+      //   }, 0);
+      // }
+
+      // foooo(() => {
+      //   console.log("callback");
+      // });
+
+      // console.log("before callback");
+
+      // 12. curry
+      // lambada
+      const substract = (a, b) => a - b;
+      const substractN = (n) => (b) => substract(n, b);
+      // const substractN = (n) => (b) => n - b;
+      const substract10 = substractN(10);
+      console.log(substract10(5));
+
+      console.log(
+        "length of Array Prototype",
+        Object.getOwnPropertyNames(Array.prototype).length
+      );
+      console.log(
+        "length of Number Prototype",
+        Object.getOwnPropertyNames(Number.prototype).length
+      );
+      console.log(
+        "length of String Prototype",
+        Object.getOwnPropertyNames(String.prototype).length
+      );
+    </script>
+  </body>
+</html>
