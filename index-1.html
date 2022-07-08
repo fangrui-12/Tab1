@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=s, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* reset */
+      /* 浏览器兼容性 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* hero-img */
+
+      .hero-img {
+        width: 100%;
+        height: 300px;
+        background-image: url("https://images.unsplash.com/photo-1559135197-8a45ea74d367?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dW5pdmVyc2l0eSUyMGJ1aWxkaW5nfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        text-shadow: 2px 2px 3px white;
+      }
+
+      /* navbar */
+      .navbar {
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+      }
+      .navbar__item {
+        display: inline-block;
+      }
+      .navbar__item::before {
+        content: "|";
+        margin: 0 1rem;
+      }
+      .navbar__item:first-child::before {
+        content: "";
+      }
+
+      .container {
+        display: flex;
+        margin-top: 2rem;
+      }
+
+      .container > div {
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        margin-top: 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="navbar">
+        <li class="navbar__item">Home</li>
+        <li class="navbar__item">计算机科学与技术</li>
+        <li class="navbar__item">土木工程</li>
+      </ul>
+    </header>
+    <main>
+      <figure class="hero-img"></figure>
+      <div class="container">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          animi provident unde obcaecati! Voluptates ab explicabo beatae nisi
+          voluptas aspernatur repudiandae, ex saepe doloremque consequatur
+          consectetur enim deserunt repellendus laboriosam dolorem esse repellat
+          sed accusantium iusto, impedit dicta nulla odio? Soluta harum ea saepe
+          accusamus, dolore consectetur nihil at praesentium asperiores. Iure
+          est assumenda nisi? Id aperiam sapiente facere voluptas. Fuga fugit
+          eligendi vero nesciunt est placeat enim quidem quae. Enim, harum.
+          Facilis reiciendis vel architecto voluptas. Culpa facilis sapiente
+          quod, quas corporis maiores obcaecati ea voluptas, modi veritatis
+          incidunt, saepe reprehenderit. Assumenda iste voluptate incidunt nisi
+          a quis id.
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          animi provident unde obcaecati! Voluptates ab explicabo beatae nisi
+          voluptas aspernatur repudiandae, ex saepe doloremque consequatur
+          consectetur enim deserunt repellendus laboriosam dolorem esse repellat
+          sed accusantium iusto, impedit dicta nulla odio? Soluta harum ea saepe
+          accusamus, dolore consectetur nihil at praesentium asperiores. Iure
+          est assumenda nisi? Id aperiam sapiente facere voluptas. Fuga fugit
+          eligendi vero nesciunt est placeat enim quidem quae. Enim, harum.
+          Facilis reiciendis vel architecto voluptas. Culpa facilis sapiente
+          quod, quas corporis maiores obcaecati ea voluptas, modi veritatis
+          incidunt, saepe reprehenderit. Assumenda iste voluptate incidunt nisi
+          a quis id.
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          animi provident unde obcaecati! Voluptates ab explicabo beatae nisi
+          voluptas aspernatur repudiandae, ex saepe doloremque consequatur
+          consectetur enim deserunt repellendus laboriosam dolorem esse repellat
+          sed accusantium iusto, impedit dicta nulla odio? Soluta harum ea saepe
+          accusamus, dolore consectetur nihil at praesentium asperiores. Iure
+          est assumenda nisi? Id aperiam sapiente facere voluptas. Fuga fugit
+          eligendi vero nesciunt est placeat enim quidem quae. Enim, harum.
+          Facilis reiciendis vel architecto voluptas. Culpa facilis sapiente
+          quod, quas corporis maiores obcaecati ea voluptas, modi veritatis
+          incidunt, saepe reprehenderit. Assumenda iste voluptate incidunt nisi
+          a quis id.
+        </div>
+      </div>
+    </main>
+    <footer>2022 &copy; copyright 湖工大</footer>
+  </body>
+</html>
